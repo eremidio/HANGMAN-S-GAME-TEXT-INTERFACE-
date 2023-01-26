@@ -25,7 +25,7 @@ stringstream(palavra_secreta)>>nome;
 string nome_secreto(nome.length(), '*');
 cout<<nome_secreto<<".\n";
 
-//REMOVENDO HÍFENS, E ESPAÇOS VÁZIOS
+//REMOVENDO HÍFENS E APOSTRÓFOS
 //HÍFEN
 palpite="-";
 pos=nome.find(palpite);
@@ -43,21 +43,6 @@ cout<< nome_secreto<<"\n";
     };
 //APOSTRÓFO
 palpite="'";
-pos=nome.find(palpite);
-if(pos>nome_secreto.length()){
-pos=0;
-                             }
-else{
-nome_secreto.replace(pos, palpite.length(), palpite);
-//Substituindo multíplas ocorrências
-while(string::npos>(pos=nome.find(palpite, pos))){ 
-nome_secreto.replace(pos, palpite.length(), palpite);
-++pos;
-                                                  };
-cout<< nome_secreto<<"\n";
-    };
-//ESPAÇOS EM BRANCO
-palpite=" ";
 pos=nome.find(palpite);
 if(pos>nome_secreto.length()){
 pos=0;
