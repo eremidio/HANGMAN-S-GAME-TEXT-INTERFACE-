@@ -25,6 +25,53 @@ stringstream(palavra_secreta)>>nome;
 string nome_secreto(nome.length(), '*');
 cout<<nome_secreto<<".\n";
 
+//REMOVENDO HÍFENS, E ESPAÇOS VÁZIOS
+//HÍFEN
+palpite="-";
+pos=nome.find(palpite);
+if(pos>nome_secreto.length()){
+pos=0;
+                             }
+else{
+nome_secreto.replace(pos, palpite.length(), palpite);
+//Substituindo multíplas ocorrências
+while(string::npos>(pos=nome.find(palpite, pos))){ 
+nome_secreto.replace(pos, palpite.length(), palpite);
+++pos;
+                                                  };
+cout<< nome_secreto<<"\n";
+    };
+//APOSTRÓFO
+palpite="'";
+pos=nome.find(palpite);
+if(pos>nome_secreto.length()){
+pos=0;
+                             }
+else{
+nome_secreto.replace(pos, palpite.length(), palpite);
+//Substituindo multíplas ocorrências
+while(string::npos>(pos=nome.find(palpite, pos))){ 
+nome_secreto.replace(pos, palpite.length(), palpite);
+++pos;
+                                                  };
+cout<< nome_secreto<<"\n";
+    };
+//ESPAÇOS EM BRANCO
+palpite=" ";
+pos=nome.find(palpite);
+if(pos>nome_secreto.length()){
+pos=0;
+                             }
+else{
+nome_secreto.replace(pos, palpite.length(), palpite);
+//Substituindo multíplas ocorrências
+while(string::npos>(pos=nome.find(palpite, pos))){ 
+nome_secreto.replace(pos, palpite.length(), palpite);
+++pos;
+                                                  };
+cout<< nome_secreto<<"\n";
+    };
+
 do{
 //RECEBENDO DADOS DO USUÁRIO
 start:
@@ -45,7 +92,7 @@ goto start;
 
 nome_secreto.replace(pos, palpite.length(), palpite);
 
-//Substituindo multílas ocorrências de uma mesma letra
+//Substituindo multíplas ocorrências de uma mesma letra
 while(string::npos>(pos=nome.find(palpite, pos))){ 
 nome_secreto.replace(pos, palpite.length(), palpite);
 ++pos;
@@ -67,7 +114,7 @@ arquivo.open("palavra.txt");
 
 //VARIÁVEIS
 int key, error;
-string chosen_word, line, guess, guess_word;
+string chosen_word, line;
 vector<string> dictionary;
 
 //CRIANDO UMA LISTA DE PALAVRAS
